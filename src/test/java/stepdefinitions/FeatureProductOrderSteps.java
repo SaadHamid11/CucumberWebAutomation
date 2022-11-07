@@ -8,6 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class FeatureProductOrderSteps {
@@ -34,20 +35,27 @@ public class FeatureProductOrderSteps {
 
     @Then("user verify feature section is visible")
     public void user_verify_feature_section_is_visible() {
-        // Write code here that turns the phrase above into concrete actions
+        Assert.assertTrue("Featured Section is displayed", homepage.isFeaturedSectionDisplayed());
 
     }
 
     @When("User select a {string} from featured products")
-    public void user_select_a_from_featured_products(String string) {
+    public void user_select_a_from_featured_products(String productName) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        homepage.createFeatureProductList();
+        boolean isProductAvailable = homepage.verifyProductAvailability(productName);
+        if(isProductAvailable){
+            System.out.println("Required product: "+productName+" is available in Featured products list");
+        }
+        else{
+            System.out.println("Required product: "+productName+" is not available in Featured products list");
+        }
     }
 
     @And("user click on view button")
     public void user_click_on_view_button() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        homepage.clickOnViewProduct();
     }
 
     @Then("product page is displayed")

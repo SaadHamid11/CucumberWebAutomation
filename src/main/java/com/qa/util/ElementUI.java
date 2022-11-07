@@ -45,4 +45,8 @@ public class ElementUI {
         return element;
     }
 
+    public WebElement waitForElementToBeClickAble(By locator){
+        WebElement ele =  wait.until(ExpectedConditions.elementToBeClickable(locator));
+        return ele;
+    }
 }

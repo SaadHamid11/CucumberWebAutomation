@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"src/test/resources/AppFeatures"},
-        tags = "not @SKIP",
+        tags = "@E2EScenario",
         glue = {"stepdefinitions", "apphooks"},
         plugin = {
                 "pretty",

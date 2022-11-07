@@ -8,12 +8,20 @@ import com.qa.util.ElementUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomePageHelpers {
     private WebDriver driver;
     private ElementUI uiUtility;
     private   WebElement loginPageLink;
     private WebElement  contactUsPageLink;
+    private List<WebElement> featuredProducts;
+    private WebElement featureProductSection;
+    private String searchedProduct;
+    private List<String> listOfFeaturedProducts = new ArrayList<String>();
 
     public HomePageHelpers(WebDriver driver){
         this.driver = driver;
@@ -46,5 +54,44 @@ public class HomePageHelpers {
         }
         return null;
     }
+
+    public boolean isFeaturedSectionDisplayed(){
+        featureProductSection = uiUtility.waitForElementToAppearOnDOM(HompageConstants.getFeatureProductSectionLocator());
+        return featureProductSection.isDisplayed();
+    }
+
+
+    public  void createFeatureProductList(){
+        featuredProducts = driver.findElements(HompageConstants.getFeatureProductNameLocator());
+
+        for(WebElement product : featuredProducts){
+
+            listOfFeaturedProducts.add(product.getText().trim().toLowerCase());
+
+        }
+    }
+    public boolean verifyProductAvailability(String productName){
+        searchedProduct = productName;
+
+        if(listOfFeaturedProducts != null){
+            return listOfFeaturedProducts.contains(searchedProduct.trim().toLowerCase());
+        }
+        return false;
+    }
+
+
+    public void clickOnViewProduct(){
+        for(int i = 0 ; i < featuredProducts.size() ; i++){
+            if(featuredProducts.get(i).getText().trim().equalsIgnoreCase(searchedProduct.trim())){
+
+            WebElement productEle = featuredProducts.get(i);
+            uiUtility.clickElement(productEle);
+            break;
+            }
+        }
+    }
+
+
+
 
 }
