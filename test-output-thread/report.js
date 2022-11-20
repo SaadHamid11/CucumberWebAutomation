@@ -1,14 +1,14 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "162e9c99-d654-420f-8661-a95e9e21f566",
+    "id": "299b581f-eca9-4aa0-97bb-d5755cbda953",
     "feature": "Order Featured Product",
     "scenario": "Verify selecting a featured product for ordering",
-    "start": 1667761467361,
+    "start": 1668578507170,
     "group": 1,
     "content": "",
     "tags": "@e2escenario,",
-    "end": 1667761476790,
+    "end": 1668578515824,
     "className": "pending"
   }
 ]);

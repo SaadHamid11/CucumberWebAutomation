@@ -10,7 +10,7 @@ Feature: Order Featured Product
     Then  user verify feature section is visible
     When User select a "<productname>" from featured products
     And user click on view button
-    Then product page is displayed
+    Then product page is displayed with "<productname>"
     And product price is displayed
     When user add quantity as <quantity>
     Then total price is multiplied by <quantity>

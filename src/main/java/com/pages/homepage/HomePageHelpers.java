@@ -4,6 +4,7 @@ import com.pages.contactuspage.ContactUsConstants;
 import com.pages.contactuspage.ContactUsHelpers;
 import com.pages.loginpage.LoginPageConstants;
 import com.pages.loginpage.LoginPageHelper;
+import com.pages.productpage.ProductPageHelpers;
 import com.qa.util.ElementUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -89,6 +90,16 @@ public class HomePageHelpers {
             break;
             }
         }
+    }
+
+
+    public ProductPageHelpers getProductPage(){
+
+        if(uiUtility.validatePageTitle(searchedProduct)){
+            return new ProductPageHelpers(driver);
+        }
+        return null;
+
     }
 
 

@@ -3,6 +3,7 @@ package stepdefinitions;
 import com.pages.accountpage.AccountPageHelpers;
 import com.pages.homepage.HomePageHelpers;
 import com.pages.loginpage.LoginPageHelper;
+import com.pages.productpage.ProductPageHelpers;
 import com.qa.factory.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -17,6 +18,9 @@ public class FeatureProductOrderSteps {
     private HomePageHelpers homepage;
     private LoginPageHelper loginpage;
     private AccountPageHelpers accountPage;
+    private double productPrice;
+
+    private ProductPageHelpers productPage;
     @Given("user navigates to home page")
     public void user_navigates_to_home_page() {
         // Write code here that turns the phrase above into concrete actions
@@ -58,16 +62,19 @@ public class FeatureProductOrderSteps {
         homepage.clickOnViewProduct();
     }
 
-    @Then("product page is displayed")
-    public void product_page_is_displayed() {
+    @Then("product page is displayed with {string}")
+    public void product_page_is_displayed_with(String title) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        String pageTitle = title.trim();
+       productPage= homepage.getProductPage();
+       Assert.assertEquals(pageTitle,productPage.getPageTitle());
     }
 
     @And("product price is displayed")
     public void product_price_is_displayed() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       productPrice = productPage.getPriceOfProduct();
+       Assert.assertTrue("Product price is "+productPage, productPrice >=0);
     }
 
     @When("user add quantity as {int}")

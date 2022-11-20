@@ -49,4 +49,37 @@ public class ElementUI {
         WebElement ele =  wait.until(ExpectedConditions.elementToBeClickable(locator));
         return ele;
     }
+
+    public boolean validatePageTitle(String title){
+
+        return wait.until(ExpectedConditions.titleContains(title));
+    }
+
+    public String removeCurrencySymbolFromString(String data){
+        String amount = null;
+        if(data!=null){
+
+            int indexOFCurrency = data.indexOf("$");
+            if(indexOFCurrency >=0){
+               amount = data.replace("$","").trim();
+            }
+        }
+        return amount;
+
+    }
+
+
+    public double convertStringToDouble(String amount){
+
+        try{
+            return Double.parseDouble(amount);
+        }
+        catch (Exception e){
+            System.out.println("Cannot convert "+amount+ " to double due to: "+e.getMessage());
+        }
+
+        return -1;
+
+    }
+
 }
