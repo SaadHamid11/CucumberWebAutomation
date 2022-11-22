@@ -10,7 +10,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+
 
 public class FeatureProductOrderSteps {
 
@@ -77,16 +79,16 @@ public class FeatureProductOrderSteps {
        Assert.assertTrue("Product price is "+productPage, productPrice >=0);
     }
 
-    @When("user add quantity as {int}")
-    public void user_add_quantity_as(Integer int1) {
+    @When("user add quantity as {string}")
+    public void user_add_quantity_as(String qty) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        productPage.addQuantityOfProduct(qty);
     }
 
-    @Then("total price is multiplied by {int}")
-    public void total_price_is_multiplied_by(Integer int1) {
+    @Then("total price is calculated")
+    public void total_price_is_calculated() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertEquals(productPage.getTotalPriceFromUI(),productPage.calculateTotalPrice(),productPage.getTotalPriceFromUI());
     }
 
     @When("user clicks on Add to cart Button")
@@ -101,8 +103,8 @@ public class FeatureProductOrderSteps {
         throw new io.cucumber.java.PendingException();
     }
 
-    @And("Quantity is displayed as {int}")
-    public void quantity_is_displayed_as(Integer int1) {
+    @And("Quantity is displayed as {string}")
+    public void quantity_is_displayed_as(String int1) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }

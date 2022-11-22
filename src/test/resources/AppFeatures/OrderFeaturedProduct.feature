@@ -12,11 +12,11 @@ Feature: Order Featured Product
     And user click on view button
     Then product page is displayed with "<productname>"
     And product price is displayed
-    When user add quantity as <quantity>
-    Then total price is multiplied by <quantity>
+    When user add quantity as "<quantity>"
+    Then total price is calculated
     When user clicks on Add to cart Button
     Then Shopping cart page is displayed
-    And Quantity is displayed as <quantity>
+    And Quantity is displayed as "<quantity>"
     And total price is displayed correctly
     And product name is displayed correctly
     When user click on Checkout button

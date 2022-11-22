@@ -40,6 +40,8 @@ public class ElementUI {
         }
     }
 
+
+
     public WebElement waitForElementToAppearOnDOM(By locator){
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         return element;
@@ -81,5 +83,21 @@ public class ElementUI {
         return -1;
 
     }
+
+
+    public int convertStringToInteger(String amount){
+
+        try{
+            return Integer.parseInt(amount);
+        }
+        catch (Exception e){
+            System.out.println("Cannot convert "+amount+ " to integer due to: "+e.getMessage());
+        }
+
+        return -1;
+
+    }
+
+
 
 }
