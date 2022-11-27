@@ -4,6 +4,7 @@ import com.pages.accountpage.AccountPageHelpers;
 import com.pages.homepage.HomePageHelpers;
 import com.pages.loginpage.LoginPageHelper;
 import com.pages.productpage.ProductPageHelpers;
+import com.pages.shoppingcartpage.ShoppingCartPageHelper;
 import com.qa.factory.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -20,6 +21,7 @@ public class FeatureProductOrderSteps {
     private HomePageHelpers homepage;
     private LoginPageHelper loginpage;
     private AccountPageHelpers accountPage;
+    private ShoppingCartPageHelper shoppingCart;
     private double productPrice;
 
     private ProductPageHelpers productPage;
@@ -94,31 +96,31 @@ public class FeatureProductOrderSteps {
     @When("user clicks on Add to cart Button")
     public void user_clicks_on_add_to_cart_button() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        shoppingCart = productPage.clickAddToCart();
     }
 
     @Then("Shopping cart page is displayed")
     public void shopping_cart_page_is_displayed() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertTrue(shoppingCart!=null);
     }
 
     @And("Quantity is displayed as {string}")
-    public void quantity_is_displayed_as(String int1) {
+    public void quantity_is_displayed_as(String qty) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertEquals(Double.parseDouble(qty),shoppingCart.getQuantityFromShoppingCart(), productPage.getQuantity());
     }
 
     @And("total price is displayed correctly")
     public void total_price_is_displayed_correctly() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertEquals(productPage.getTotalPriceOfProduct(), shoppingCart.getTotalPrice(), productPage.getTotalPriceOfProduct());
     }
 
     @And("product name is displayed correctly")
     public void product_name_is_displayed_correctly() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertEquals(homepage.getSearchedProduct(),shoppingCart.getProductName());
     }
 
     @When("user click on Checkout button")

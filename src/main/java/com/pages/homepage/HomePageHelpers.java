@@ -29,6 +29,10 @@ public class HomePageHelpers {
         this.uiUtility = new ElementUI(driver);
     }
 
+    public String getSearchedProduct(){
+        return this.searchedProduct;
+    }
+
     public void gotoHomePage(){
         String url = "https://automationteststore.com/";
         driver.navigate().to(url);
