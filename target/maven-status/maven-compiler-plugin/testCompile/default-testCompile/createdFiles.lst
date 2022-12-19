@@ -1,4 +1,9 @@
 testrunners\MyTestRunner.class
+stepdefinitions\ContactUsSteps.class
 apphooks\ApplicationHooks.class
 stepdefinitions\AccountPageSteps.class
+SampleTests\ExampleHelp.class
 stepdefinitions\LoginPageSteps.class
+stepdefinitions\FeatureProductOrderSteps.class
+testrunners\FailedTestRunner.class
+SampleTests\ExampleHelp2.class

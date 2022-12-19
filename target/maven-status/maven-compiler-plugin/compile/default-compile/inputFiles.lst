@@ -1,12 +1,15 @@
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\loginpage\returningcustomer\ReturningCustomerConstants.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\loginpage\LoginPageHelper.java
+C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\checkoutconfirmationpage\CheckoutConfirmationConstants.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\homepage\HompageConstants.java
+C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\productpage\ProductPageConstants.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\loginpage\returningcustomer\ReturningCustomerHelpers.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\homepage\HomePageHelpers.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\accountpage\navigation\NavigationBarConstants.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\qa\factory\DriverFactory.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\qa\util\Constants.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\qa\util\ExcelReader.java
+C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\checkoutconfirmationpage\CheckoutConfirmationHelpers.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\contactuspage\ContactUsHelpers.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\qa\util\ElementUI.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\accountpage\navigation\NavigationbarHelpers.java
@@ -15,3 +18,6 @@ C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\ja
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\accountpage\AccountPageHelpers.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\accountpage\AccountPageConstants.java
 C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\contactuspage\ContactUsConstants.java
+C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\productpage\ProductPageHelpers.java
+C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\shoppingcartpage\ShoppingCartPageConstants.java
+C:\Users\shamid\IdeaProjects\SeleniumExcercises\CucumberPOMFramework\src\main\java\com\pages\shoppingcartpage\ShoppingCartPageHelper.java

@@ -36,7 +36,7 @@ public class FeatureProductOrderSteps {
     public void user_is_logged_in_the_application() {
         // Write code here that turns the phrase above into concrete actions
         loginpage = homepage.navigateLoginPage();
-        accountPage =  loginpage.navigateToReturningCustomers().doLogin("testuser.1","TestPassword1");
+        accountPage =  loginpage.navigateToReturningCustomers().doLogin("testuser.1","test1234");
         homepage = accountPage.navigateHomePage();
 
     }
@@ -90,7 +90,21 @@ public class FeatureProductOrderSteps {
     @Then("total price is calculated")
     public void total_price_is_calculated() {
         // Write code here that turns the phrase above into concrete actions
-        Assert.assertEquals(productPage.getTotalPriceFromUI(),productPage.calculateTotalPrice(),productPage.getTotalPriceFromUI());
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        double totalPrice = productPage.getTotalPriceFromUI();
+        double calculatedPrice = productPage.calculateTotalPrice();
+
+        if(totalPrice >= 0 && calculatedPrice >= 0){
+            Assert.assertEquals(totalPrice,calculatedPrice, calculatedPrice);
+        }
+        else{
+            Assert.fail("Price values are not converted correctly. Total Price: "+totalPrice+ " calculatedPrice: "+calculatedPrice);
+        }
+
     }
 
     @When("user clicks on Add to cart Button")

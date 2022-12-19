@@ -1,7 +1,11 @@
+com\qa\util\ExcelReader.class
 com\qa\factory\DriverFactory.class
 com\pages\accountpage\navigation\NavigationbarHelpers.class
+com\pages\productpage\ProductPageHelpers.class
+com\pages\shoppingcartpage\ShoppingCartPageConstants.class
 com\pages\accountpage\AccountPageHelpers.class
 com\pages\loginpage\returningcustomer\ReturningCustomerConstants.class
+com\pages\checkoutconfirmationpage\CheckoutConfirmationHelpers.class
 com\qa\util\ElementUI.class
 com\pages\accountpage\navigation\NavigationBarConstants.class
 com\pages\homepage\HompageConstants.class
@@ -11,4 +15,9 @@ com\qa\util\ConfigReader.class
 com\pages\loginpage\LoginPageHelper.class
 com\pages\loginpage\LoginPageConstants.class
 com\pages\loginpage\returningcustomer\ReturningCustomerHelpers.class
+com\pages\shoppingcartpage\ShoppingCartPageHelper.class
+com\pages\productpage\ProductPageConstants.class
+com\pages\checkoutconfirmationpage\CheckoutConfirmationConstants.class
+com\pages\contactuspage\ContactUsHelpers.class
+com\pages\contactuspage\ContactUsConstants.class
 com\pages\homepage\HomePageHelpers.class

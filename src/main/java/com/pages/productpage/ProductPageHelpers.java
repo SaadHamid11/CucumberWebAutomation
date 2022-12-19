@@ -41,14 +41,17 @@ public class ProductPageHelpers {
 
    public double getPriceOfProduct(){
         priceElement = driver.findElement(ProductPageConstants.getPriceLocator());
-        String amount = uiUtility.removeCurrencySymbolFromString(priceElement.getText());
+        if(priceElement != null){
+            String amount = uiUtility.removeCurrencySymbolFromString(priceElement.getText());
 
-        if(amount != null){
-            return uiUtility.convertStringToDouble(amount);
+            if(amount != null){
+                return uiUtility.convertStringToDouble(amount);
+            }
         }
-        else{
-            return -1;
-        }
+
+
+        return -1;
+
    }
 
    public void addQuantityOfProduct(String quantity){
@@ -59,7 +62,8 @@ public class ProductPageHelpers {
 
    public double calculateTotalPrice(){
         int qty = uiUtility.convertStringToInteger(quantity);
-        productPriceElement = driver.findElement(ProductPageConstants.getProductPrice());
+       productPriceElement = uiUtility.waitForElementToAppearOnDOM(ProductPageConstants.getProductPrice());
+
         String total = uiUtility.removeCurrencySymbolFromString(productPriceElement.getText());
 
         double price = uiUtility.convertStringToDouble(total);
@@ -71,9 +75,13 @@ public class ProductPageHelpers {
    }
 
    public double getTotalPriceFromUI(){
-        totalPriceElement = driver.findElement(ProductPageConstants.getTotalPrice());
-        String totalPriceText = totalPriceElement.getText();
-        return uiUtility.convertStringToDouble(uiUtility.removeCurrencySymbolFromString(totalPriceText));
+        totalPriceElement = uiUtility.waitForElementToAppearOnDOM(ProductPageConstants.getTotalPrice());
+        if(totalPriceElement != null){
+            String totalPriceText = totalPriceElement.getText();
+            String removedCurrencySign = uiUtility.removeCurrencySymbolFromString(totalPriceText);
+            return uiUtility.convertStringToDouble(removedCurrencySign);
+        }
+        return -1;
    }
 
    public ShoppingCartPageHelper clickAddToCart(){
@@ -88,5 +96,6 @@ public class ProductPageHelpers {
        }
 
    }
+
 
 }

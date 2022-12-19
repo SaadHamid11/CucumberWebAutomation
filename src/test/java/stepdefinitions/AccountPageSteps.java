@@ -31,7 +31,7 @@ public class AccountPageSteps {
         homePage.gotoHomePage();
         loginPage = homePage.navigateLoginPage();
         accountHolder = loginPage.navigateToReturningCustomers();
-        accountPage = accountHolder.doLogin("Saad11","Test1234");
+        accountPage = accountHolder.doLogin("testuser.1","test1234");
 
     }
 

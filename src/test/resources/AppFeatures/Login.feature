@@ -17,7 +17,7 @@ Feature: Login page feature
       Then Login page is displayed
       When user navigate to Returning Customer
       And user enters username as "testuser.1"
-      And user enters password as "TestPassword1"
+      And user enters password as "test1234"
       And user clicks login button
       Then User sees an error message
 
