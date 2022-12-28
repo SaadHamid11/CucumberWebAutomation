@@ -51,7 +51,11 @@ public class ExampleHelp2 {
         }
 
 
-
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         driver.quit();
 
@@ -60,13 +64,16 @@ public class ExampleHelp2 {
     public void performLogin(String userName, String password) throws InterruptedException {
         if(userName != null && password != null){
 
+            WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='login-app']")));
 
-            WebElement userNameEle = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='username']")));
+            button.click();
+            Thread.sleep(2000);
+            WebElement userNameEle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='Username']")));
             action.moveToElement(userNameEle).click().sendKeys(userName).build().perform();
 
-            WebElement passwordEle = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='Passwort']")));
+            WebElement passwordEle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='Password']")));
             action.moveToElement(passwordEle).click().sendKeys(password).build().perform();
-            WebElement submitButtom = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='login-app']")));
+            WebElement submitButtom = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='ActionSubmit']")));
             action.moveToElement(submitButtom).click().build().perform();
         }
 
